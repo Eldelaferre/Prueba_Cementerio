@@ -1,17 +1,16 @@
-alert("s");
 $(document).ready(function () {
 
     $('.btn_nuevo_UsuVisitante').on('click', function () {
-        Insertar(); 
+        Insertar();
         //alert("Boton funciona");
-  
+
     });
 
     function Insertar() {
-        
-        var num = Math.floor((Math.random() * (999999999-0))+0);
+
+        var num = Math.floor((Math.random() * (999999999 - 0)) + 0);
         alert(num);
-        
+
         let rol = "Visitante";
         let usu = $('#usu').val();
         let cla = $('#cla').val();
@@ -23,7 +22,7 @@ $(document).ready(function () {
             success: function (res) {
                 if (res) {
                     alert("Datos Guardados");
-                    alert("Esta pagina seré redirigida para completar una informacion");
+                    alert("Esta pagina seré redirigida para completar la informacion");
                     window.location.replace("http://localhost:8084/Prueba_Cementerio/Registro_Visitante.jsp");
                 }
             }

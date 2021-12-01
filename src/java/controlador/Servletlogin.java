@@ -6,6 +6,8 @@ package controlador;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.math.BigInteger;
+import java.security.MessageDigest;
 import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -72,7 +74,7 @@ public class Servletlogin extends HttpServlet {
             String u, c, r, n, co;
             int cod = 0;
             u = request.getParameter("usuario");
-            c = request.getParameter("clave");
+            c=getMD5(request.getParameter("clave"));
             //JOptionPane.showMessageDialog(null, u+c);
             r = request.getParameter("");
             n = request.getParameter("");
@@ -121,6 +123,23 @@ public class Servletlogin extends HttpServlet {
                     response.sendRedirect("Login.jsp");
                 }
             }
+        }
+        
+        
+        
+    }
+    public String getMD5(String input){
+        try {
+            MessageDigest md=MessageDigest.getInstance("MD5");
+            byte[] encBytes=md.digest(input.getBytes());
+            BigInteger numero=new BigInteger(1, encBytes);
+            String encString=numero.toString(16);
+            while(encString.length()<32){
+                encString="0"+encString;
+            }
+         return encString; 
+         } catch (Exception e) {
+             throw new RuntimeException(e);
         }
     }
 

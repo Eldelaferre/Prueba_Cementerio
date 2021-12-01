@@ -2,8 +2,13 @@
     Document   : Registro_Visitante
     Created on : 30/11/2021, 09:37:12 PM
     Author     : stild
---%>
 
+<%
+HttpSession datos = request.getSession();
+    String id = (String) datos.getAttribute("Id_Usu");
+
+%>
+--%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -53,7 +58,9 @@
         <!-- Fin Menú-->
         <section class="registro">
             <form action=""  method="POST">
+                
                 <h4>Completa los siguientes datos</h4>
+                <%-- <h4><%=id%></h4>--%>
 
                 
                 <input class="control" type="text" name="nombre" id="nom" placeholder="Ingrese el Nombre">

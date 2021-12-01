@@ -13,6 +13,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+//import javax.servlet.http.HttpSession;
 import javax.swing.JOptionPane;
 
 import modelo.Usuario;
@@ -69,27 +70,25 @@ public class Servlet_Usuario extends HttpServlet {
         processRequest(request, response);
 
         //JOptionPane.showMessageDialog(null, "En el servlet");
+        //HttpSession sesion = request.getSession();
         int id;
         String r, u, c;
-      
+
         if (request.getParameter("dato").equals("Insertar")) {
             int y;
 
-            id = Integer.parseInt(request.getParameter("id"));            
+            id = Integer.parseInt(request.getParameter("id"));
             r = request.getParameter("r");
             u = request.getParameter("u");
-            c = request.getParameter("c");
-
+            c = getMD5(request.getParameter("c"));
             //JOptionPane.showMessageDialog(null, "El id" + id + "  " + "El correo " + u);
-            
             Usuario usuario = new Usuario(id, r, u, c);
             UsuarioDao usdao = new UsuarioDao();
-            
-            
-            
+
             y = usdao.Insertar_Usuario(usuario);
             if (y > 0) {
                 JOptionPane.showMessageDialog(null, "Guardados");
+                //sesion.setAttribute("Id_Usu", id);
                 response.sendRedirect("Registro_Visitante.jsp");
             } else {
                 JOptionPane.showMessageDialog(null, " Fail");
@@ -117,7 +116,7 @@ public class Servlet_Usuario extends HttpServlet {
                 JOptionPane.showMessageDialog(null, "datos no fueron actualizados");
                 response.sendRedirect("Usuario.jsp");
             }
-            */
+             */
         }
 
     }
