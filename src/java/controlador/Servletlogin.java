@@ -68,14 +68,17 @@ public class Servletlogin extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
-
+        JOptionPane.showMessageDialog(null, "Entra al servelt");
         if (request.getParameter("btnlogin") != null) {
             ArrayList<login> lista = new ArrayList<>();
+            
+            
             String u, c, r, n, co;
             int cod = 0;
             u = request.getParameter("usuario");
+            //c=request.getParameter("clave");
             c=getMD5(request.getParameter("clave"));
-            //JOptionPane.showMessageDialog(null, u+c);
+            JOptionPane.showMessageDialog(null, u+c);
             r = request.getParameter("");
             n = request.getParameter("");
 

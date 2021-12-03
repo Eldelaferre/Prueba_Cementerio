@@ -1,7 +1,8 @@
+alert("Insertar usuario javascript");
 $(document).ready(function(){
     
-    alert("en el jsp")
-    consultar();
+    alert("Insertar usuario javascript");
+    //consultar();
     
     
     
@@ -58,7 +59,6 @@ $(document).ready(function(){
                     let tabla=document.querySelector('#res');
                     tabla.innerHTML='';
                     tabla.innerHTML=`<thead><tr><th>Documento</th>
-                                        <th>Nombre</th>
                                         <th>Rol</th>
                                         <th>Usuario</th>
                                         <th>Clave</th>
@@ -66,7 +66,6 @@ $(document).ready(function(){
                                     </tr></thead>`;
                     for(let i of res){
                         tabla.innerHTML+=`<tbody><tr>  <td><input class="cod" type="text" name="Documento" id="doc" value="${i.Codigo_Usuario}"></td>
-                                                <td><input class="doc" type="text" name="nom" id="nom" value="${i.Nombre_Usuario}"></td>
                                                 <td><input class="doc" type="text" name="rol" id="rol" value="${i.Rol_Usuario}"></td>
                                                 <td><input class="doc" type="text" name="Usuario" id="Usuario" value="${i.User_Usuario}"></td>
                                                 <td><input class="des" type="text" name="Clave" id="Nombres" value="${i.Clave_Usuario}"></td>

@@ -15,8 +15,7 @@
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/Styles.css">
         <link rel="stylesheet" href="css/tabla.css">
-        <script src="Js/jquery-3.6.0.min.js"></script>
-        <script src="Js/Insertar_Usuario.js"></script>
+        
 
         <title>Formulario Registro Usuario</title>
     </head>
@@ -77,11 +76,15 @@
             </form>
 
         </section>
-        
-        
-    <table class="table" id="res">
-        
-    </table>
+
+
+        <table class="table" id="res">
+
+        </table>
 
     </body>
+    <script src="js/Insertar_Usuario.js"></script>
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 </html>
