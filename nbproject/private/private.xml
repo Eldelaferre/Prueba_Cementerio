@@ -3,7 +3,17 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/stild/OneDrive/Documentos/GitHub/Prueba_Cementerio/src/java/controlador/Servletlogin.java</file>
+            <file>file:/C:/Users/jonat/Documents/GitHub/Prueba_Cementerio/web/Registro_Usuario_Nuevo.jsp</file>
+            <file>file:/C:/Users/jonat/Documents/GitHub/Prueba_Cementerio/src/java/controlador/Conexion.java</file>
+            <file>file:/C:/Users/jonat/Documents/GitHub/Prueba_Cementerio/src/java/controlador/Servlet_Visitante.java</file>
+            <file>file:/C:/Users/jonat/Documents/GitHub/Prueba_Cementerio/web/js/Registro_Usu_Visitante.js</file>
+            <file>file:/C:/Users/jonat/Documents/GitHub/Prueba_Cementerio/src/java/modelo/Estado.java</file>
+            <file>file:/C:/Users/jonat/Documents/GitHub/Prueba_Cementerio/web/js/Prueba_Actualiza_Usuario.js</file>
+            <file>file:/C:/Users/jonat/Documents/GitHub/Prueba_Cementerio/src/java/controlador/ServletEstado.java</file>
+            <file>file:/C:/Users/jonat/Documents/GitHub/Prueba_Cementerio/src/java/controlador/Servletlogin.java</file>
+            <file>file:/C:/Users/jonat/Documents/GitHub/Prueba_Cementerio/src/java/controlador/Servlet_Usuario.java</file>
+            <file>file:/C:/Users/jonat/Documents/GitHub/Prueba_Cementerio/web/Registro_Visitante.jsp</file>
+            <file>file:/C:/Users/jonat/Documents/GitHub/Prueba_Cementerio/nbproject/build-impl.xml</file>
         </group>
     </open-files>
 </project-private>

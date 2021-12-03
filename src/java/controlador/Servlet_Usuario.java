@@ -13,6 +13,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 //import javax.servlet.http.HttpSession;
 import javax.swing.JOptionPane;
 
@@ -78,10 +79,13 @@ public class Servlet_Usuario extends HttpServlet {
             int y;
 
             id = Integer.parseInt(request.getParameter("id"));
+            HttpSession sesion = request.getSession();
             r = request.getParameter("r");
             u = request.getParameter("u");
+            sesion.setAttribute("id", id);
+            sesion.setAttribute("usuario", u);
             c = getMD5(request.getParameter("c"));
-            //JOptionPane.showMessageDialog(null, "El id" + id + "  " + "El correo " + u);
+            JOptionPane.showMessageDialog(null, id+" "+u);
             Usuario usuario = new Usuario(id, r, u, c);
             UsuarioDao usdao = new UsuarioDao();
 

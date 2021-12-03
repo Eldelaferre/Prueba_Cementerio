@@ -1,14 +1,8 @@
-<%-- 
-    Document   : Registro_Visitante
-    Created on : 30/11/2021, 09:37:12 PM
-    Author     : stild
-
 <%
-HttpSession datos = request.getSession();
-    String id = (String) datos.getAttribute("Id_Usu");
-
+    HttpSession dato=request.getSession();
+    int id=(int)(dato.getAttribute("id"));
+    String usuario=(String)(dato.getAttribute("usuario"));
 %>
---%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -21,13 +15,13 @@ HttpSession datos = request.getSession();
         <link rel="stylesheet" href="css/Styles.css">
         <link rel="stylesheet" href="css/tabla.css">
         <script src="Js/jquery-3.6.0.min.js"></script>
-        <script src="Js/Insertar_Visitante.js"></script>
+        
 
         <title>Registro Visitante</title>
     </head>
     <body>
         <!-- Parte del menú-->
-
+        
         <header>
             <section>
                 <a href="index.jsp" id="Logo">Cementerios</a>
@@ -60,12 +54,13 @@ HttpSession datos = request.getSession();
             <form action=""  method="POST">
                 
                 <h4>Completa los siguientes datos</h4>
-                <%-- <h4><%=id%></h4>--%>
-
                 
+
+                <input class="control" type="text" name="id" id="id1" value="<%=id%>" placeholder="<%=id%>" disabled>
                 <input class="control" type="text" name="nombre" id="nom" placeholder="Ingrese el Nombre">
                 <input class="control" type="text" name="direccion" id="dir" placeholder="Ingrese la Direccion">
                 <input class="control" type="number" name="telefono" id="tel" placeholder="Ingrese el Telefono">
+                <input class="control" type="text" name="usuario" id="usuario" value="<%=usuario%>" placeholder="<%=usuario%>">
                 
 
 
@@ -79,6 +74,8 @@ HttpSession datos = request.getSession();
         <table class="table" id="res">
         
         </table>
+        
+        <label><%=id+" "+usuario%></label>
         
     </body>
 </html>
