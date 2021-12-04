@@ -1,7 +1,7 @@
 <%
-    HttpSession dato=request.getSession();
-    int id=(int)(dato.getAttribute("id"));
-    String usuario=(String)(dato.getAttribute("usuario"));
+    HttpSession dato = request.getSession();
+    int id = (int) (dato.getAttribute("id"));
+    String usuario = (String) (dato.getAttribute("usuario"));
 %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -14,14 +14,14 @@
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/Styles.css">
         <link rel="stylesheet" href="css/tabla.css">
-        <script src="Js/jquery-3.6.0.min.js"></script>
-        
+
+
 
         <title>Registro Visitante</title>
     </head>
     <body>
         <!-- Parte del menú-->
-        
+
         <header>
             <section>
                 <a href="index.jsp" id="Logo">Cementerios</a>
@@ -43,7 +43,7 @@
                         <li><a href="">Servicios</a></li>
                         <li><a href="">Aliados</a></li>
                         <li><a href="">Contacto</a></li>
-                        <li><a href="Login.html">Ingreso</a></li>
+                        <li><a href="Login.jsp">Ingreso</a></li>
                     </ul>
                 </nav>
             </section>
@@ -52,30 +52,32 @@
         <!-- Fin Menú-->
         <section class="registro">
             <form action=""  method="POST">
-                
-                <h4>Completa los siguientes datos</h4>
-                
 
-                <input class="control" type="text" name="id" id="id1" value="<%=id%>" placeholder="<%=id%>" disabled>
+                <h4>Completa los siguientes datos</h4>
+
+
+                <input class="control" type="text" name="id" id="doc" value="<%=id%>" placeholder="<%=id%>" disabled>
                 <input class="control" type="text" name="nombre" id="nom" placeholder="Ingrese el Nombre">
                 <input class="control" type="text" name="direccion" id="dir" placeholder="Ingrese la Direccion">
                 <input class="control" type="number" name="telefono" id="tel" placeholder="Ingrese el Telefono">
-                <input class="control" type="text" name="usuario" id="usuario" value="<%=usuario%>" placeholder="<%=usuario%>">
-                
+                <input class="control" type="text" name="usuario" id="cor" value="<%=usuario%>" placeholder="<%=usuario%>">
+
 
 
                 <input class="boton btn_Registro_Visitante" id="btn_Registro_Visitante" type="button" value="Finalizar">
-                
+
 
             </form>
 
         </section>
-        
+
         <table class="table" id="res">
-        
+
         </table>
-        
-        <label><%=id+" "+usuario%></label>
-        
+
+
+
     </body>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/Registro_visitante.js"></script>
 </html>

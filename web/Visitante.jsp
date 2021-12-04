@@ -15,8 +15,8 @@
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/Styles.css">
         <link rel="stylesheet" href="css/tabla.css">
-        <script src="Js/jquery-3.6.0.min.js"></script>
-        <script src="Js/Insertar_Visitante.js"></script>
+        <script src="js/jquery-3.6.0.min.js"></script>
+        <script src="js/Insertar_Visitante.js"></script>
 
         <title>Formulario Registro visitante</title>
     </head>

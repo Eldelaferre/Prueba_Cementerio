@@ -3,7 +3,7 @@ $(document).ready(function () {
     alert("en el jsp")
     consultar();
 
-    $('#btn_ingreso_Visitante').on('click', function () {
+    $('#btn_Registro_Visitante').on('click', function () {
         
         Insertar();
         
@@ -16,8 +16,7 @@ $(document).ready(function () {
     });
 
     function Insertar() {
-        alert("en insertar")
-        let cod=$('#cod').val();
+        alert("en insertar");
         let doc=$('#doc').val();
         let nom=$('#nom').val();
         let dir=$('#dir').val();
@@ -25,13 +24,13 @@ $(document).ready(function () {
         let cor=$('#cor').val();
 
         
-        alert("Codigo "+cod+" Documento "+doc);
+        alert(" Documento "+doc);
         
         $.ajax({
             
             type:"POST",
             url:"Servlet_Visitante",
-            data:{dato:"insertar",c:cod,d:doc,n:nom,di:dir,t:tel,co:cor},
+            data:{dato:"insertar",d:doc,n:nom,di:dir,t:tel,co:cor},
                 success:function(res){
                     if(res){
                         alert("datos guardados");

@@ -5,15 +5,16 @@
         <group>
             <file>file:/C:/Users/jonat/Documents/GitHub/Prueba_Cementerio/web/Registro_Usuario_Nuevo.jsp</file>
             <file>file:/C:/Users/jonat/Documents/GitHub/Prueba_Cementerio/src/java/controlador/Conexion.java</file>
+            <file>file:/C:/Users/jonat/Documents/GitHub/Prueba_Cementerio/src/java/modelo/certificacionDao.java</file>
             <file>file:/C:/Users/jonat/Documents/GitHub/Prueba_Cementerio/src/java/controlador/Servlet_Visitante.java</file>
             <file>file:/C:/Users/jonat/Documents/GitHub/Prueba_Cementerio/web/js/Registro_Usu_Visitante.js</file>
             <file>file:/C:/Users/jonat/Documents/GitHub/Prueba_Cementerio/src/java/modelo/Estado.java</file>
-            <file>file:/C:/Users/jonat/Documents/GitHub/Prueba_Cementerio/web/js/Prueba_Actualiza_Usuario.js</file>
-            <file>file:/C:/Users/jonat/Documents/GitHub/Prueba_Cementerio/src/java/controlador/ServletEstado.java</file>
+            <file>file:/C:/Users/jonat/Documents/GitHub/Prueba_Cementerio/web/js/Insertar_Usuario.js</file>
             <file>file:/C:/Users/jonat/Documents/GitHub/Prueba_Cementerio/src/java/controlador/Servletlogin.java</file>
             <file>file:/C:/Users/jonat/Documents/GitHub/Prueba_Cementerio/src/java/controlador/Servlet_Usuario.java</file>
             <file>file:/C:/Users/jonat/Documents/GitHub/Prueba_Cementerio/web/Registro_Visitante.jsp</file>
-            <file>file:/C:/Users/jonat/Documents/GitHub/Prueba_Cementerio/nbproject/build-impl.xml</file>
+            <file>file:/C:/Users/jonat/Documents/GitHub/Prueba_Cementerio/web/Visitante.jsp</file>
+            <file>file:/C:/Users/jonat/Documents/GitHub/Prueba_Cementerio/web/js/Insertar_Visitante.js</file>
         </group>
     </open-files>
 </project-private>

@@ -75,7 +75,6 @@ public class Servlet_Visitante extends HttpServlet {
             
         int y;
 
-        c = Integer.parseInt(request.getParameter("c"));
         d = Integer.parseInt(request.getParameter("d"));
         n = request.getParameter("n");
         di = request.getParameter("di");
@@ -84,21 +83,20 @@ public class Servlet_Visitante extends HttpServlet {
 
         JOptionPane.showMessageDialog(null, n + "  El nombre");
 
-        Visitante visitante = new Visitante(c, d, n, di, t, co);
+        Visitante visitante = new Visitante(d, n, di, t, co);
         VisitanteDao vidao = new VisitanteDao();
 
         y = vidao.Insertar_Visitante(visitante);
         if (y > 0) {
             JOptionPane.showMessageDialog(null, " guardados");
-            response.sendRedirect("Visitante.jsp");
+            response.sendRedirect("Registro_Visitante.jsp");
         } else {
             JOptionPane.showMessageDialog(null, " Fail");
-            response.sendRedirect("Visitante.jsp");
+            response.sendRedirect("Registro_Visitante.jsp");
         }
         }
         if(request.getParameter("dato").equals("actualizar")){
             boolean dat;
-            c = Integer.parseInt(request.getParameter("c"));
             d = Integer.parseInt(request.getParameter("d"));
             n = request.getParameter("n");
             di = request.getParameter("di");
@@ -107,16 +105,16 @@ public class Servlet_Visitante extends HttpServlet {
 
             JOptionPane.showMessageDialog(null, n + "  El nombre");
 
-            Visitante visitante = new Visitante(c, d, n, di, t, co);
+            Visitante visitante = new Visitante(d, n, di, t, co);
             VisitanteDao vidao = new VisitanteDao();
             dat=vidao.actualizarvisitante(visitante);
             if(dat){
                 JOptionPane.showMessageDialog(null, "datos actualizados");
-                response.sendRedirect("Visitante.jsp");
+                response.sendRedirect("Registro_Visitante.jsp");
             }
             else{
                 JOptionPane.showMessageDialog(null, "datos no fueron actualizados");
-                response.sendRedirect("Visitante.jsp");
+                response.sendRedirect("Registro_Visitante.jsp");
             }
         }
     }
