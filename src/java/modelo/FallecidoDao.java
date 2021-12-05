@@ -66,21 +66,25 @@ public class FallecidoDao {
 
     }
     
-    public ArrayList<Fallecido> consultaFallecido(Fallecido fal){
-       ArrayList<Fallecido> lista=new ArrayList<>();
-       
-       try {
-            ps=cnn.prepareStatement("select fallec_codigo,Tbtumba_Tumba_codigo,fallec_fec_ingreso,fallec_nombr,fallec_fec_nacim,fallec_fec_muert,fallec_hora_muert,fallec_responsable,fallec_correo,fallec_tel,Cod_Estado,Tumba_ubicacion from Tbfallecido inner join Tbtumba on (Tbtumba_Tumba_codigo=Tumba_codigo) where fallec_codigo= '"+fal.getCodigo_digitado()+"'");
-            rs=ps.executeQuery();
-            while(rs.next()){
-                fal = new Fallecido(rs.getInt(1), rs.getInt(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getString(7), rs.getString(8), rs.getString(9), rs.getInt(10), rs.getString(11), rs.getInt(12));
+    public ArrayList<Fallecido> consultaFallecido(Fallecido fal) {
+        ArrayList<Fallecido> lista = new ArrayList<>();
+
+        try {
+            ps = cnn.prepareStatement("SELECT * FROM Tbfallecido inner join Tbtumba on(Tbtumba_Tumba_codigo=Tumba_codigo) where fallec_codigo=?");
+            ps.setInt(1, fal.getCodigo_digitado());
+            rs = ps.executeQuery();
+            JOptionPane.showMessageDialog(null, "entra");
+            while (rs.next()) {
+                fal = new Fallecido(rs.getInt(1), rs.getInt(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getString(7), rs.getString(8), rs.getString(9), rs.getInt(10), rs.getInt(11),rs.getInt(12),rs.getString(13));
 
                 lista.add(fal);
             }
-            
+
         } catch (SQLException ex) {
-            System.out.println("Error en la consulta"+ ex);
+            System.out.println("error en la consulta" + ex);
         }
-       return lista;
+
+        return lista;
+
     }
 }

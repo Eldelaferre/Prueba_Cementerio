@@ -38,10 +38,12 @@ public class Servletfallecidos extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
+        JOptionPane.showMessageDialog(null, "en el servlet");
         
         if(request.getParameter("btninsF")!=null){
              
-            int cod = Integer.parseInt(request.getParameter("premin"));
+            int cod = Integer.parseInt(request.getParameter("codf"));
+
             
             
             HttpSession del=request.getSession();

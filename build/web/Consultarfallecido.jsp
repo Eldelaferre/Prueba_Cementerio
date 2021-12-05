@@ -38,19 +38,14 @@
             </nav>
         </section>
         </header>
-        <section action="Servletfallecidos" method="POST" class="registro">
+        <form action="Servletfallecidos" method="POST" class="registro">
         <h4>Consulta de Fallecido</h4>
         <input class="control" type="text" name="codf" id="codf" placeholder="Ingrese el codigo fallecido">
         
-        <input class="btninsF" name="btninsF" type="button" id="btninsF" value="Enviar">
+        <input type="submit"  name="btninsF"  class="btninsF" value="Buscar">
         
+        </form>
         
-
-        </section>
-        
-        <table class="table" id="res">
-        
-        </table>
         
     </body>
 </html>
