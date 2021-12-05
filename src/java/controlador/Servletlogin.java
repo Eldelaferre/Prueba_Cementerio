@@ -118,7 +118,7 @@ public class Servletlogin extends HttpServlet {
                         //JOptionPane.showMessageDialog(null, datlo.getId_Usuario_log());
                         sesion.setAttribute("rol", datlo.getRol_Usu_log());
                         sesion.setAttribute("Codigo", datlo.getId_Usuario_log());
-                        response.sendRedirect("index.jsp");
+                        response.sendRedirect("Consultarfallecido.jsp");
 
                     }
                 } else {

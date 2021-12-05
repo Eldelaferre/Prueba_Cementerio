@@ -1,7 +1,8 @@
 package modelo;
 
 public class Fallecido {
-
+    
+    private Integer Codigo_digitado;
     private Integer Codigo_fallecido;
     private Integer Codigo_Tumba;
     private String Fecha_Ingreso_Fallecido;
@@ -12,6 +13,7 @@ public class Fallecido {
     private String Responsable_Fallecido;
     private String Email_Responsable;
     private Integer Telefono_Responsable;
+    private String Ubicacion;
     private Integer Codigo_Estado_Fallecido;
 
     public Fallecido(Integer Codigo_fallecido, Integer Codigo_Tumba, String Fecha_Ingreso_Fallecido, String Nombre_Fallecido, String Fecha_Nacimiento, String Fecha_Muerte, String Hora_Muerte, String Responsable_Fallecido, String Email_Responsable, Integer Telefono_Responsable, Integer Codigo_Estado_Fallecido) {
@@ -27,6 +29,47 @@ public class Fallecido {
         this.Telefono_Responsable = Telefono_Responsable;
         this.Codigo_Estado_Fallecido = Codigo_Estado_Fallecido;
     }
+
+    public String getUbicacion() {
+        return Ubicacion;
+    }
+
+    public void setUbicacion(String Ubicacion) {
+        this.Ubicacion = Ubicacion;
+    }
+    
+
+    public Fallecido(Integer Codigo_fallecido, Integer Codigo_Tumba, String Fecha_Ingreso_Fallecido, String Nombre_Fallecido, String Fecha_Nacimiento, String Fecha_Muerte, String Hora_Muerte, String Responsable_Fallecido, String Email_Responsable, Integer Telefono_Responsable, String Ubicacion, Integer Codigo_Estado_Fallecido) {
+        this.Codigo_fallecido = Codigo_fallecido;
+        this.Codigo_Tumba = Codigo_Tumba;
+        this.Fecha_Ingreso_Fallecido = Fecha_Ingreso_Fallecido;
+        this.Nombre_Fallecido = Nombre_Fallecido;
+        this.Fecha_Nacimiento = Fecha_Nacimiento;
+        this.Fecha_Muerte = Fecha_Muerte;
+        this.Hora_Muerte = Hora_Muerte;
+        this.Responsable_Fallecido = Responsable_Fallecido;
+        this.Email_Responsable = Email_Responsable;
+        this.Telefono_Responsable = Telefono_Responsable;
+        this.Ubicacion = Ubicacion;
+        this.Codigo_Estado_Fallecido = Codigo_Estado_Fallecido;
+    }
+    
+    
+
+    public Fallecido(Integer Codigo_digitado) {
+        this.Codigo_digitado = Codigo_digitado;
+    }
+
+    public Integer getCodigo_digitado() {
+        return Codigo_digitado;
+    }
+
+    public void setCodigo_digitado(Integer Codigo_digitado) {
+        this.Codigo_digitado = Codigo_digitado;
+    }
+
+    
+    
 
     public Integer getCodigo_fallecido() {
         return Codigo_fallecido;
