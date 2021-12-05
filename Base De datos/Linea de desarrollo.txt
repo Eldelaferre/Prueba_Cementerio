@@ -1,0 +1,8 @@
+Visitante
+
+Registro Usuario ____________ Listo
+Registro Visitante___________ Listo
+Consultar Fallecidos_________
+Comentarios__________________ Listo
+Tablas comentarios___________
+

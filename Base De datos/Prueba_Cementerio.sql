@@ -186,7 +186,7 @@ select*from TBActividad;
 /*Actividades Visitante*/
 
 create table TBcomentariossanitarios(
-comsani_codigo int auto_increment primary key,
+comsani_codigo int primary key,
 Id_Visitante int,
 comsani_fecha date,
 Comsani_descripcion varchar (255),

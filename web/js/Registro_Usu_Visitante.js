@@ -5,7 +5,7 @@ $(document).ready(function () {
     });
     function Insertar() {
         var num = Math.floor((Math.random() * (999999999 - 0)) + 0);
-        alert(num);
+        //alert(num);
         let rol = "Visitante";
         let usu = $('#usu').val();
         let cla = $('#cla').val();

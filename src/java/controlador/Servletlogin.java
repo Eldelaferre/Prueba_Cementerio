@@ -68,7 +68,7 @@ public class Servletlogin extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
-        JOptionPane.showMessageDialog(null, "Entra al servelt");
+        //JOptionPane.showMessageDialog(null, "Entra al servelt");
         if (request.getParameter("btnlogin") != null) {
             ArrayList<login> lista = new ArrayList<>();
             
@@ -78,7 +78,7 @@ public class Servletlogin extends HttpServlet {
             u = request.getParameter("usuario");
             //c=request.getParameter("clave");
             c=getMD5(request.getParameter("clave"));
-            JOptionPane.showMessageDialog(null, u+c);
+            //JOptionPane.showMessageDialog(null, u+c);
             r = request.getParameter("");
             n = request.getParameter("");
 
@@ -92,7 +92,7 @@ public class Servletlogin extends HttpServlet {
                     datlo = lista.get(i);
                 }
                 if (datlo.getUser_Usu_log().equals(u) && datlo.getClave_Usu_log().equals(c)) {
-                    JOptionPane.showMessageDialog(null, "Datos correctos");
+                    //JOptionPane.showMessageDialog(null, "Datos correctos");
                     HttpSession sesion = request.getSession();
                     //sesion.setAttribute("rosesion", u);
                     //sesion.setAttribute("varsesion", datlo.getId_Usuario_log());
@@ -119,6 +119,9 @@ public class Servletlogin extends HttpServlet {
                         sesion.setAttribute("rol", datlo.getRol_Usu_log());
                         sesion.setAttribute("Codigo", datlo.getId_Usuario_log());
                         response.sendRedirect("Consultarfallecido.jsp");
+
+
+
 
                     }
                 } else {
