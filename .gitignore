@@ -14,3 +14,5 @@ build/web/WEB-INF/classes/controlador/Servlet_Usuario.class
 build/web/WEB-INF/classes/controlador/Conexion.class
 nbproject/private/private.properties
 src/java/controlador/Conexion.java
+build/web/WEB-INF/classes/controlador/Servlet_Comentarios.class
+nbproject/private/private.properties

@@ -85,13 +85,13 @@ public class Servlet_Usuario extends HttpServlet {
             sesion.setAttribute("id", id);
             sesion.setAttribute("usuario", u);
             c = getMD5(request.getParameter("c"));
-            JOptionPane.showMessageDialog(null, id+" "+u);
+            //JOptionPane.showMessageDialog(null, id+" "+u);
             Usuario usuario = new Usuario(id, r, u, c);
             UsuarioDao usdao = new UsuarioDao();
 
             y = usdao.Insertar_Usuario(usuario);
             if (y > 0) {
-                JOptionPane.showMessageDialog(null, "Guardados");
+                //JOptionPane.showMessageDialog(null, "Guardados");
                 //sesion.setAttribute("Id_Usu", id);
                 response.sendRedirect("Registro_Visitante.jsp");
             } else {

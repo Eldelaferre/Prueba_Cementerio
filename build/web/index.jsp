@@ -2,6 +2,12 @@
     Document   : index
     Created on : 2/11/2021, 09:34:16 PM
     Author     : stild
+
+<%
+    HttpSession dato = request.getSession();
+    int id = (int) (dato.getAttribute("Codigo"));
+    //String usuario = (String) (dato.getAttribute("usuario"));
+%>
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -42,6 +48,7 @@
                     <li><a href="#sec4">Aliados</a></li>
                     <li><a href="">Contacto</a></li>
                     <li><a href="Login.jsp">Ingreso</a></li>
+                    <li><a href=""></a></li>
                 </ul>
             </nav>
         </section>
@@ -117,13 +124,13 @@
                             </a>
                         </div>
                         <div class="caja_serv">
-                            <a href="comentarios.jsp">
+                            <a href="Comentarios_Visitante.jsp">
                                 <img src="img/Opinar_cementerio.jpg" alt="" width="300px">
                                 <h3>Opinar sobre un cementerio</h3>
                                 <br>
                                 <br>
-                                <li><a href="comentarios.jsp">Opinar sobre una Tumba</a></li>
-                                <li><a href="comentarios.jsp">Opinar sobre un cementerio</a></li>
+                                <li><a href="Comentarios_Visitante.jsp">Opinar sobre una Tumba</a></li>
+                                <li><a href="Comentarios_Visitante.jsp">Opinar sobre un cementerio</a></li>
                             </a>
                         </div>
                     </div>

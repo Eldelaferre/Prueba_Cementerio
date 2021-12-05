@@ -2,13 +2,13 @@
     Document   : index
     Created on : 2/11/2021, 09:34:16 PM
     Author     : stild
-
+--%>
 <%
     HttpSession dato = request.getSession();
     int id = (int) (dato.getAttribute("Codigo"));
     //String usuario = (String) (dato.getAttribute("usuario"));
 %>
---%>
+
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -47,8 +47,8 @@
                     <li><a href="#sec3">Servicios</a></li>
                     <li><a href="#sec4">Aliados</a></li>
                     <li><a href="">Contacto</a></li>
-                    <li><a href="Login.jsp">Ingreso</a></li>
-                    <li><a href=""></a></li>
+                    <li><a href=""><%=id%></a></li>
+                    
                 </ul>
             </nav>
         </section>

@@ -12,15 +12,17 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.swing.JOptionPane;
-import modelo.Visitante;
-import modelo.VisitanteDao;
+import modelo.comentarios;
+import modelo.cometariosDao;
+import modelo.contrato;
+import modelo.contratoDao;
 
 /**
  *
  * @author jonat
  */
-@WebServlet(name = "Servlet_Visitante", urlPatterns = {"/Servlet_Visitante"})
-public class Servlet_Visitante extends HttpServlet {
+@WebServlet(name = "Servletcomentarios", urlPatterns = {"/Servletcomentarios"})
+public class Servlet_Comentarios extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -65,56 +67,49 @@ public class Servlet_Visitante extends HttpServlet {
             throws ServletException, IOException {
         processRequest(request, response);
         
-        //JOptionPane.showMessageDialog(null, "Ser");
-        //JOptionPane.showMessageDialog(null, "  El nombre");
-
-        int c, d;
-        String n, di, t, co;
-        
-        if(request.getParameter("dato").equals("insertar")){
+        JOptionPane.showMessageDialog(null, "en el servlet");
+        String f,d;
+        int c,cv;
+        if(request.getParameter("dato").equals("Insertar")){
+            int y;
+            c=Integer.parseInt(request.getParameter("cod"));
+            cv=Integer.parseInt(request.getParameter("id"));
+            f=request.getParameter("fec");
+            d=request.getParameter("com");
             
-        int y;
-
-        d = Integer.parseInt(request.getParameter("d"));
-        n = request.getParameter("n");
-        di = request.getParameter("di");
-        t = request.getParameter("t");
-        co = request.getParameter("co");
-
-        //JOptionPane.showMessageDialog(null, n + "  El nombre");
-
-        Visitante visitante = new Visitante(d, n, di, t, co);
-        VisitanteDao vidao = new VisitanteDao();
-
-        y = vidao.Insertar_Visitante(visitante);
-        if (y > 0) {
-            //JOptionPane.showMessageDialog(null, " guardados");
-            response.sendRedirect("Registro_Visitante.jsp");
-        } else {
-            JOptionPane.showMessageDialog(null, " Fail");
-            response.sendRedirect("Registro_Visitante.jsp");
-        }
+            JOptionPane.showMessageDialog(null,f+d);
+            
+            comentarios comentarios = new comentarios(c,cv,f,d);
+            cometariosDao comdao=new cometariosDao();
+            y=comdao.insertarcomentario(comentarios);
+            if(y>0){
+                response.sendRedirect("comentarios.jsp");
+                JOptionPane.showMessageDialog(null, "datos guardados");
+            }
+            else{
+                JOptionPane.showMessageDialog(null, "datos no guardados");
+                response.sendRedirect("comentarios.jsp");
+            }
         }
         if(request.getParameter("dato").equals("actualizar")){
             boolean dat;
-            d = Integer.parseInt(request.getParameter("d"));
-            n = request.getParameter("n");
-            di = request.getParameter("di");
-            t = request.getParameter("t");
-            co = request.getParameter("co");
-
-            JOptionPane.showMessageDialog(null, n + "  El nombre");
-
-            Visitante visitante = new Visitante(d, n, di, t, co);
-            VisitanteDao vidao = new VisitanteDao();
-            dat=vidao.actualizarvisitante(visitante);
+            c=Integer.parseInt(request.getParameter("c"));
+            cv=Integer.parseInt(request.getParameter("cv"));
+            f=request.getParameter("f");
+            d=request.getParameter("d");
+            
+            JOptionPane.showMessageDialog(null,f+d);
+            
+            comentarios comentarios = new comentarios(c,cv,f,d);
+            cometariosDao comdao=new cometariosDao();
+            dat=comdao.actualizarcomentario(comentarios);
             if(dat){
                 JOptionPane.showMessageDialog(null, "datos actualizados");
-                response.sendRedirect("Registro_Visitante.jsp");
+                response.sendRedirect("comentarios.jsp");
             }
             else{
                 JOptionPane.showMessageDialog(null, "datos no fueron actualizados");
-                response.sendRedirect("Registro_Visitante.jsp");
+                response.sendRedirect("comentarios.jsp");
             }
         }
     }

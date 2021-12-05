@@ -1,10 +1,10 @@
 $(document).ready(function () {
-    alert("Registro visitante prueba");
+    //alert("Registro visitante prueba");
     
     $('#btn_Registro_Visitante').on('click', function () {
         
         Insertar();
-        alert("entra al boton");
+        //alert("entra al boton");
         
     });
     
@@ -26,7 +26,8 @@ $(document).ready(function () {
             data:{dato:"insertar",d:doc,n:nom,di:dir,t:tel,co:cor},
                 success:function(res){
                     if(res){
-                        alert("datos guardados");
+                        alert("Datos guardados");
+                        window.location.replace("http://localhost:8082/Prueba_Cementerio/Login.jsp")
                     }
                 }
         });
