@@ -40,7 +40,7 @@
         </header>
         <form action="Servletfallecidos" method="POST" class="registro">
         <h4>Consulta de Fallecido</h4>
-        <input class="control" type="text" name="codf" id="codf" placeholder="Ingrese el codigo fallecido">
+        <input class="control" type="text" name="codf" id="codf" placeholder="Ingrese el nombre fallecido">
         
         <input type="submit"  name="btninsF"  class="btninsF" value="Buscar">
         

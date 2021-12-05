@@ -2,7 +2,7 @@ package modelo;
 
 public class Fallecido {
     
-    private Integer Codigo_digitado;
+    private String Nombre_digitado;
     private Integer Codigo_fallecido;
     private Integer Codigo_Tumba;
     private String Fecha_Ingreso_Fallecido;
@@ -82,21 +82,18 @@ public class Fallecido {
         this.Ubicacion = Ubicacion;
         this.Codigo_Estado_Fallecido = Codigo_Estado_Fallecido;
     }
-    
-    
 
-    public Fallecido(Integer Codigo_digitado) {
-        this.Codigo_digitado = Codigo_digitado;
+    public Fallecido(String Nombre_digitado) {
+        this.Nombre_digitado = Nombre_digitado;
     }
 
-    public Integer getCodigo_digitado() {
-        return Codigo_digitado;
+    public String getNombre_digitado() {
+        return Nombre_digitado;
     }
 
-    public void setCodigo_digitado(Integer Codigo_digitado) {
-        this.Codigo_digitado = Codigo_digitado;
+    public void setNombre_digitado(String Nombre_digitado) {
+        this.Nombre_digitado = Nombre_digitado;
     }
-
     
     
 

@@ -4,7 +4,7 @@
 <%@page import="modelo.Fallecido"%>
 <%
     HttpSession dato=request.getSession();
-    int cod=(int)(dato.getAttribute("CodigoF"));
+    String cod=(String)(dato.getAttribute("CodigoF"));
 %>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>

@@ -42,7 +42,7 @@ public class Servletfallecidos extends HttpServlet {
         
         if(request.getParameter("btninsF")!=null){
              
-            int cod = Integer.parseInt(request.getParameter("codf"));
+             String cod = request.getParameter("codf");
 
             
             

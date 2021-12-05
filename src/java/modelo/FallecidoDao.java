@@ -70,8 +70,8 @@ public class FallecidoDao {
         ArrayList<Fallecido> lista = new ArrayList<>();
 
         try {
-            ps = cnn.prepareStatement("SELECT * FROM Tbfallecido inner join Tbtumba on(Tbtumba_Tumba_codigo=Tumba_codigo) where fallec_codigo=?");
-            ps.setInt(1, fal.getCodigo_digitado());
+            ps = cnn.prepareStatement("SELECT * FROM Tbfallecido inner join Tbtumba on(Tbtumba_Tumba_codigo=Tumba_codigo) where fallec_nombre=?");
+            ps.setString(1, fal.getNombre_digitado());
             rs = ps.executeQuery();
             JOptionPane.showMessageDialog(null, "entra");
             while (rs.next()) {
