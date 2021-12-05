@@ -12,17 +12,17 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.swing.JOptionPane;
-import modelo.comentarios;
-import modelo.cometariosDao;
-import modelo.contrato;
-import modelo.contratoDao;
+import modelo.PQRS;
+import modelo.PQRSDao;
+import modelo.actividad;
+import modelo.actividadDao;
 
 /**
  *
  * @author jonat
  */
-@WebServlet(name = "Servletcomentarios", urlPatterns = {"/Servletcomentarios"})
-public class Servlet_Comentarios extends HttpServlet {
+@WebServlet(name = "ServletPQRS", urlPatterns = {"/ServletPQRS"})
+public class ServletPQRS extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -67,29 +67,34 @@ public class Servlet_Comentarios extends HttpServlet {
             throws ServletException, IOException {
         processRequest(request, response);
         
-        //JOptionPane.showMessageDialog(null, "en el servlet");
+        JOptionPane.showMessageDialog(null, "En el servlet de pqr");
         String f,d;
         int c,cv;
         if(request.getParameter("dato").equals("Insertar")){
+            
             int y;
-            c=Integer.parseInt(request.getParameter("cod"));
+            //c=Integer.parseInt(request.getParameter("cod"));
             cv=Integer.parseInt(request.getParameter("id"));
             f=request.getParameter("fec");
             d=request.getParameter("com");
+            JOptionPane.showMessageDialog(null,"Mensaje "+ d+" Visi "+ cv);
             
-            //JOptionPane.showMessageDialog(null,f+d);
             
-            comentarios comentarios = new comentarios(c,cv,f,d);
-            cometariosDao comdao=new cometariosDao();
-            y=comdao.insertarcomentario(comentarios);
+            JOptionPane.showMessageDialog(null,d);
+            
+            //PQRS pqrs = new PQRS(c,cv,f,d);
+            PQRS pqrs = new PQRS(cv,f,d);
+            PQRSDao pqrsdao=new PQRSDao();
+            y=pqrsdao.insertarPQRS(pqrs);
             if(y>0){
-                response.sendRedirect("comentarios.jsp");
-                JOptionPane.showMessageDialog(null, "datos guardados");
+                //response.sendRedirect("PQR.jsp");
+                JOptionPane.showMessageDialog(null, "Datos guardados");
             }
             else{
-                JOptionPane.showMessageDialog(null, "datos no guardados");
-                response.sendRedirect("comentarios.jsp");
+                //JOptionPane.showMessageDialog(null, "datos no guardados");
+                response.sendRedirect("PQR.jsp");
             }
+            
         }
         if(request.getParameter("dato").equals("actualizar")){
             boolean dat;
@@ -100,16 +105,16 @@ public class Servlet_Comentarios extends HttpServlet {
             
             JOptionPane.showMessageDialog(null,f+d);
             
-            comentarios comentarios = new comentarios(c,cv,f,d);
-            cometariosDao comdao=new cometariosDao();
-            dat=comdao.actualizarcomentario(comentarios);
+            PQRS pqrs = new PQRS(c,cv,f,d);
+            PQRSDao pqrsdao=new PQRSDao();
+            dat=pqrsdao.actualizarPQRS(pqrs);
             if(dat){
                 JOptionPane.showMessageDialog(null, "datos actualizados");
-                response.sendRedirect("comentarios.jsp");
+                response.sendRedirect("PQR.jsp");
             }
             else{
                 JOptionPane.showMessageDialog(null, "datos no fueron actualizados");
-                response.sendRedirect("comentarios.jsp");
+                response.sendRedirect("PQR.jsp");
             }
         }
     }

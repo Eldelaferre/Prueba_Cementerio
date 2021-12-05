@@ -5,7 +5,7 @@ $(document).ready(function(){
     
     $('.boton').on('click',function(){
         
-        insertar();
+        //insertar();
         
     });
     
@@ -16,22 +16,22 @@ $(document).ready(function(){
     });
     
     function insertar(){
-        alert("en insertar")
-        let cod=$('#Codigo').val();
-        let codvi=$('#numero').val();
-        let fec=$('#fecha').val();
-        let des=$('#descripcion').val();
-        
-        alert("Codigo "+cod+" Codigo Visitante "+codvi);
-        
+        var cod = Math.floor((Math.random() * (9999 - 0)) + 0);
+        let id = null;
+        let date = new Date();
+        let fecha = String(date.getFullYear()).padStart(2, '0') + '/' + String(date.getMonth() + 1).padStart(2, '0') + '/' + date.getDate();
+
+        let id_vi = $('#idv').val();
+        let pqr = $('#pqr').val();
+        alert(id_vi);
         $.ajax({
             
             type:"POST",
             url:"ServletPQRS",
-            data:{dato:"insertar",c:cod,cv:codvi,f:fec,d:des},
-                success:function(res){
+            data:{dato:"Insertar",c:id,cod_vi:id_vi,f:fecha,des:pqr},
+            success:function(res){
                     if(res){
-                        alert("datos guardados")
+                        alert("Datos guardados");
                     }
                 }
         });

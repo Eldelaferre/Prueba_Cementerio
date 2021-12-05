@@ -28,7 +28,7 @@
 
     <header>
         <section class="sec_menu">
-            <a href="index.jsp" id="Logo">Cementerios</a>
+            <a href="index_1.jsp" id="Logo">Cementerios</a>
 
             <label for="menu-1" class="menu">
                 <ul>
@@ -45,8 +45,8 @@
                 <ul>
                     <li><a href="#sec2">Nosotros</a></li>
                     <li><a href="#sec3">Servicios</a></li>
-                    <li><a href="#sec4">Aliados</a></li>
-                    <li><a href="">Contacto</a></li>
+                    <li><a href="PQR_Visitante.jsp">PQR</a></li>
+                    <li><a href="">Cerrar Sesion</a></li>                    
                     <li><a href=""><%=id%></a></li>
                     
                 </ul>
@@ -109,7 +109,7 @@
                                 <h3>Consulta de Tumba de familares</h3>
                                 <br>
                                 <br>
-                                <li><a href="">Consulta Fallecido</a></li>
+                                <li><a href="Consultarfallecido.jsp">Consulta Fallecido</a></li>
                                 <li><a href="">Renovar Tumba</a></li>
                             </a>
                         </div>
