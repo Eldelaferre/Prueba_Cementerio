@@ -2,7 +2,18 @@ Visitante
 
 Registro Usuario ____________ Listo
 Registro Visitante___________ Listo
-Consultar Fallecidos_________
+Consultar Fallecidos_________ Listo
 Comentarios__________________ Listo
 Tablas comentarios___________
+PQR__________________________ Listo
+Tabla Pqr____________________ 
+Ver y actualizar datos_______
+
+Empleado
+
+Admin
+
+Registro Usuario Empleado____
+Regristro Empleado___________
+
 
