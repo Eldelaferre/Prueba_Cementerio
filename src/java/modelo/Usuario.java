@@ -9,6 +9,11 @@ public class Usuario {
     private String User_Usuario;
     private String Clave_Usuario;
 
+    public Usuario(Integer Codigo_Usuario, String Clave_Usuario) {
+        this.Codigo_Usuario = Codigo_Usuario;
+        this.Clave_Usuario = Clave_Usuario;
+    }
+
     public Usuario(Integer Codigo_Usuario, String Rol_Usuario, String User_Usuario, String Clave_Usuario) {
         this.Codigo_Usuario = Codigo_Usuario;
         this.Rol_Usuario = Rol_Usuario;

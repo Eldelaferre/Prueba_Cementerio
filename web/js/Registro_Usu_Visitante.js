@@ -17,7 +17,7 @@ $(document).ready(function () {
                 if (res) {
                     alert("Datos Guardados");
                     alert("Esta pagina seré redirigida para completar la informacion");
-                    window.location.replace("http://localhost:8082/Prueba_Cementerio/Registro_Visitante.jsp", Id = num, usua = "usu");
+                    window.location.replace("http://localhost:8080/Prueba_Cementerio/Registro_Visitante.jsp", Id = num, usua = "usu");
                 }
             }
         });

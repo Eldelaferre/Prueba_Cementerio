@@ -15,7 +15,7 @@
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/Styles.css">
         <link rel="stylesheet" href="css/tabla.css">
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        
 
 
         <title>Registro nuevo usuario</title>
@@ -63,7 +63,7 @@
             </section>
         </main>
     </body>
-    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="js/Registro_Usu_Visitante.js"></script>
     
 </html>

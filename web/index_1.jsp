@@ -6,7 +6,6 @@
 <%
     HttpSession dato = request.getSession();
     int id = (int) (dato.getAttribute("Codigo"));
-    //String usuario = (String) (dato.getAttribute("usuario"));
 %>
 
 
@@ -47,12 +46,14 @@
                     <li><a href="#sec3">Servicios</a></li>
                     <li><a href="PQR_Visitante.jsp">PQR</a></li>
                     <li><a href="">Cerrar Sesion</a></li>                    
-                    <li><a href=""><%=id%></a></li>
+                    <li><a href="Datos_Visitante.jsp"><%=id%></a></li>
                     
                 </ul>
             </nav>
         </section>
+                    
     </header>
+                    
 
     <!-- Fin Menú-->
 
@@ -193,6 +194,8 @@
             </div>
         </div>
     </footer>
+    
+    
 
 
 </body>

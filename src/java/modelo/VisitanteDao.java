@@ -78,5 +78,23 @@ public class VisitanteDao {
         }
         return lista;
     }
+    
+    public ArrayList<Visitante> consultavisitante(Visitante vis) {
+        JOptionPane.showMessageDialog(null, "en el dao");
+        ArrayList<Visitante> lista = new ArrayList<>();
+        try {
+            ps = cnn.prepareStatement("select*from TBvisitante inner join Usuario on (Id_Usuario=Usua_Id) where Id_Usuario=?");
+            ps.setInt(1, vis.getId_Usuario_Busqueda());
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                vi = new Visitante(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5),rs.getInt(6), rs.getString(7), rs.getString(8), rs.getString(9));
+                lista.add(vi);
+            }
+
+        } catch (SQLException ex) {
+            System.out.println("Error en la consulta" + ex);
+        }
+        return lista;
+    }
 
 }
