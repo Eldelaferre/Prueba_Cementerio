@@ -1,3 +1,10 @@
+<%
+    HttpSession dato = request.getSession();
+    int id = (int) (dato.getAttribute("Codigo"));
+    String nomb = (String) (dato.getAttribute("nombre"));
+    String usuario = (String) (dato.getAttribute("usuario"));
+%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,7 +20,7 @@
     </head>
 
     <body>
-        <!-- Parte del menú-->
+        <!-- Parte del menÃº-->
 
         <header>
             <section class="sec_menu">
@@ -35,14 +42,14 @@
                         <li><a href="#sec2">Nosotros</a></li>
                         <li><a href="#sec3">Servicios</a></li>
                         <li><a href="#sec4">Aliados</a></li>
-                        <li><a href="">Contacto</a></li>
-                        <li><a href="Login.jsp">Ingreso</a></li>
+                        <li><a href=""><%=nomb%></a></li>
+                        <li><a href=""><%=id%></a></li>
                     </ul>
                 </nav>
             </section>
         </header>
 
-        <!-- Fin Menú-->
+        <!-- Fin MenÃº-->
 
         <!-- Contenido pagina principal -->
         <main>

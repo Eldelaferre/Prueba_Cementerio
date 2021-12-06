@@ -82,12 +82,13 @@
                 <div class="caja">
                     <button><a href="Herramientas.jsp">Herramientas</a></button>
                 </div>
-                
+
                 <div class="caja">
                     <button><a href="Usuario.jsp">Usuarios</a></button>
                 </div>
 
             </section>
+            <%--
             <section>
 
                 <div class="container">
@@ -143,6 +144,7 @@
                 </div>
 
             </section>
+            --%>
         </main>
 
 

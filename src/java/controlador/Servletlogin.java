@@ -16,6 +16,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.swing.JOptionPane;
+import modelo.Empleado;
+import modelo.EmpleadoDao;
+import modelo.Visitante;
+import modelo.VisitanteDao;
 import modelo.login;
 import modelo.loginDao;
 
@@ -71,13 +75,12 @@ public class Servletlogin extends HttpServlet {
         //JOptionPane.showMessageDialog(null, "Entra al servelt");
         if (request.getParameter("btnlogin") != null) {
             ArrayList<login> lista = new ArrayList<>();
-            
-            
+
             String u, c, r, n, co;
             int cod = 0;
             u = request.getParameter("usuario");
             //c=request.getParameter("clave");
-            c=getMD5(request.getParameter("clave"));
+            c = getMD5(request.getParameter("clave"));
             //JOptionPane.showMessageDialog(null, u+c);
             r = request.getParameter("");
             n = request.getParameter("");
@@ -100,15 +103,46 @@ public class Servletlogin extends HttpServlet {
                     //JOptionPane.showMessageDialog(null, datlo.getRol_Usu_log());
                     //JOptionPane.showMessageDialog(null, datlo.getUser_Usu_log());
                     if (datlo.getRol_Usu_log().equals("Administrador")) {
-                        //JOptionPane.showMessageDialog(null, datlo.getRol_Usu_log());
-                        //JOptionPane.showMessageDialog(null, datlo.getId_Usuario_log());
+//                        JOptionPane.showMessageDialog(null, datlo.getRol_Usu_log());
+//                        JOptionPane.showMessageDialog(null, datlo.getId_Usuario_log());
+//                        
+                        ArrayList<Empleado> emm = new ArrayList<>();
+                        String nom;
+                        Empleado empleado = new Empleado(datlo.getId_Usuario_log());
+                        Empleado dato= new Empleado();
+                        EmpleadoDao emDao= new EmpleadoDao();
+                        emm = emDao.DatosEmple(empleado);
+                        for (int i = 0; i < lista.size(); i++) {
+                            JOptionPane.showMessageDialog(null, "Entra al for = " + i);
+                            dato = emm.get(i);
+                            
+                        }
+                        nom = dato.getNombre_Empleado();
+                        JOptionPane.showMessageDialog(null, nom);
+                        
+                        sesion.setAttribute("nombre", dato.getNombre_Empleado());
                         sesion.setAttribute("rol", datlo.getRol_Usu_log());
                         sesion.setAttribute("Codigo", datlo.getId_Usuario_log());
-                        response.sendRedirect("EspacioEmpleado.jsp");
+                        response.sendRedirect("Espacio_Admin.jsp");
 
                     } else if (datlo.getRol_Usu_log().equals("Empleado")) {
                         //JOptionPane.showMessageDialog(null, datlo.getRol_Usu_log());
                         //JOptionPane.showMessageDialog(null, datlo.getId_Usuario_log());
+                        ArrayList<Empleado> emm = new ArrayList<>();
+                        String nom;
+                        Empleado empleado = new Empleado(datlo.getId_Usuario_log());
+                        Empleado dato= new Empleado();
+                        EmpleadoDao emDao= new EmpleadoDao();
+                        emm = emDao.DatosEmple(empleado);
+                        for (int i = 0; i < lista.size(); i++) {
+                            JOptionPane.showMessageDialog(null, "Entra al for = " + i);
+                            dato = emm.get(i);
+                            
+                        }
+                        nom = dato.getNombre_Empleado();
+                        JOptionPane.showMessageDialog(null, nom);
+                        
+                        sesion.setAttribute("nombre", dato.getNombre_Empleado());
                         sesion.setAttribute("rol", datlo.getRol_Usu_log());
                         sesion.setAttribute("Codigo", datlo.getId_Usuario_log());
                         response.sendRedirect("EspacioEmpleado.jsp");
@@ -116,12 +150,22 @@ public class Servletlogin extends HttpServlet {
                     } else if (datlo.getRol_Usu_log().equals("Visitante")) {
                         //JOptionPane.showMessageDialog(null, datlo.getRol_Usu_log());
                         //JOptionPane.showMessageDialog(null, datlo.getId_Usuario_log());
+                        
+                        ArrayList<Visitante> visi= new ArrayList<>();
+                        String nom;
+                        Visitante visidato = new Visitante(datlo.getId_Usuario_log());
+                        Visitante dato = new Visitante();
+                        VisitanteDao viDao = new VisitanteDao();
+                        visi = viDao.Datosvisitante(visidato);
+                        for (int i = 0; i < lista.size(); i++) {
+                            JOptionPane.showMessageDialog(null, "Entra al for = " + i);
+                            dato = visi.get(i);
+                            
+                        }
+                        sesion.setAttribute("nombre", dato.getNombre_Visitante());
                         sesion.setAttribute("rol", datlo.getRol_Usu_log());
                         sesion.setAttribute("Codigo", datlo.getId_Usuario_log());
                         response.sendRedirect("index_1.jsp");
-
-
-
 
                     }
                 } else {
@@ -130,22 +174,21 @@ public class Servletlogin extends HttpServlet {
                 }
             }
         }
-        
-        
-        
+
     }
-    public String getMD5(String input){
+
+    public String getMD5(String input) {
         try {
-            MessageDigest md=MessageDigest.getInstance("MD5");
-            byte[] encBytes=md.digest(input.getBytes());
-            BigInteger numero=new BigInteger(1, encBytes);
-            String encString=numero.toString(16);
-            while(encString.length()<32){
-                encString="0"+encString;
+            MessageDigest md = MessageDigest.getInstance("MD5");
+            byte[] encBytes = md.digest(input.getBytes());
+            BigInteger numero = new BigInteger(1, encBytes);
+            String encString = numero.toString(16);
+            while (encString.length() < 32) {
+                encString = "0" + encString;
             }
-         return encString; 
-         } catch (Exception e) {
-             throw new RuntimeException(e);
+            return encString;
+        } catch (Exception e) {
+            throw new RuntimeException(e);
         }
     }
 
