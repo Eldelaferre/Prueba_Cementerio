@@ -2,6 +2,7 @@
 package modelo;
 
 public class Empleado {
+    
     private Integer Id_Empleado;
     private String Tipo_Empleado;
     private Integer Cedula_Empleado;
@@ -20,6 +21,13 @@ public class Empleado {
         this.Telefono_Empleado = Telefono_Empleado;
         this.Email_Empleado = Email_Empleado;
         this.Imagen_Empleado = Imagen_Empleado;
+    }
+
+    public Empleado(Integer Id_Empleado) {
+        this.Id_Empleado = Id_Empleado;
+    }
+
+    public Empleado() {
     }
 
     public Integer getId_Empleado() {
@@ -86,7 +94,5 @@ public class Empleado {
         this.Imagen_Empleado = Imagen_Empleado;
     }
 
-    
-    
     
 }

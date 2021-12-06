@@ -15,6 +15,7 @@ public class EmpleadoDao {
     PreparedStatement ps;
     ResultSet rs;
     Empleado em;
+    Empleado emp;
 
     public Boolean insertarempleado(Empleado emp) {
         int x = 0;
@@ -82,4 +83,28 @@ public class EmpleadoDao {
         }
         return lista;
     }
+
+    public ArrayList<Empleado> DatosEmple(Empleado dd) {
+        JOptionPane.showMessageDialog(null, dd.getId_Empleado());
+        ArrayList<Empleado> lista = new ArrayList<>();       
+        try {            
+            ps = cnn.prepareStatement("Select * from tbempleado where Id_Empleado=?");
+            ps.setInt(1, dd.getId_Empleado());
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                
+                emp = new Empleado(rs.getInt(1), rs.getString(2), rs.getInt(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getString(7), rs.getString(8));
+                lista.add(emp);
+                
+            }
+            
+            
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error En la consulta" + e);
+        }
+        JOptionPane.showMessageDialog(null, "Consulta ok");
+        return lista;
+
+    }
+
 }

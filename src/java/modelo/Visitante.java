@@ -16,6 +16,14 @@ public class Visitante {
         this.Email_Visitante = Email_Visitante;
     }
 
+    public Visitante(Integer Id_Usuario) {
+        this.Id_Usuario = Id_Usuario;
+    }
+
+    public Visitante() {
+    }
+    
+
     public Integer getId_Usuario() {
         return Id_Usuario;
     }

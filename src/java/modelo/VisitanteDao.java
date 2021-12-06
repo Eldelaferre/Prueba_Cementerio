@@ -78,5 +78,22 @@ public class VisitanteDao {
         }
         return lista;
     }
+    public ArrayList<Visitante> Datosvisitante(Visitante dd) {
+        JOptionPane.showMessageDialog(null,dd.getId_Usuario());
+        ArrayList<Visitante> lista = new ArrayList<>();
+        try {
+            ps = cnn.prepareStatement("select*from TBvisitante where Id_Usuario=?");
+            ps.setInt(1, dd.getId_Usuario());
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                vi = new Visitante(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5));
+                lista.add(vi);
+            }
+
+        } catch (SQLException ex) {
+            System.out.println("Error en la consulta" + ex);
+        }
+        return lista;
+    }
 
 }

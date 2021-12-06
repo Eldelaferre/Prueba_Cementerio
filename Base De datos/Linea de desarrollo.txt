@@ -4,10 +4,10 @@ Registro Usuario ____________ Listo
 Registro Visitante___________ Listo
 Consultar Fallecidos_________ Listo
 Comentarios__________________ Listo
-Tablas comentarios___________
+Tablas comentarios___________ 
 PQR__________________________ Listo
 Tabla Pqr____________________ 
-Ver y actualizar datos_______
+Ver y actualizar datos_______ 
 
 Empleado
 
